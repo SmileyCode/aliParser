@@ -47,12 +47,12 @@ public class HTMLParser {
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 String inputLine;
 
-
                 while ((inputLine = in.readLine()) != null) {
                     response.append(inputLine);
+                    if(inputLine.contains("div")) break;
                 }
                 in.close();
-                proxyList.next();
+
             }
             catch (Exception e){
                 proxyList.next();
